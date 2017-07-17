@@ -1,0 +1,21 @@
+﻿<QueryViewSpecExtension
+	xmlns="bb_appfx_queryview"
+	xmlns:c="bb_appfx_commontypes"
+	ID="b51b9d35-9c36-4019-b14c-3009034192ae"
+	Name="DH - CM - Address Zip Code First Five Query Extension"
+	Description="An extension to the Addresses query view" 
+	Author="Dignity Health"
+	ExtendsViewName="V_QUERY_CONSTITUENTADDRESS"
+	>
+
+	<AddFields>
+		<AddField>
+      <SelectClause AliasAs="ZIPFIRSTFIVEDIGITS">
+        SELECT LEFT(LTRIM(RTRIM(POSTCODE)), 5) FROM ADDRESS A
+        where [A].[ID] = [ADDRESS].[ID]
+      </SelectClause>
+      <OutputField Name="ZIPFIRSTFIVEDIGITS" Caption="ZIP (First 5 Digits)" />
+		</AddField>
+	</AddFields>
+
+</QueryViewSpecExtension>
