@@ -11,8 +11,7 @@
 	<AddFields>
 		<AddField>
       <SelectClause AliasAs="ZIPFIRSTFIVEDIGITS">
-        SELECT LEFT(LTRIM(RTRIM(POSTCODE)), 5) FROM ADDRESS A
-        where [A].[ID] = [ADDRESS].[ID]
+        LEFT(LTRIM(RTRIM(ADDRESS.POSTCODE)), 5)
       </SelectClause>
       <OutputField Name="ZIPFIRSTFIVEDIGITS" Caption="ZIP (First 5 Digits)" />
 		</AddField>
